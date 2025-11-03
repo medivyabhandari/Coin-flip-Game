@@ -46,7 +46,7 @@
 </head>
 <body>
 
-  <h1>🪙 Coin Flip Game</h1>
+  <h1>Coin Flip Game</h1>
   <p>Choose your guess:</p>
 
   <button onclick="flipCoin('heads')">Heads</button>
@@ -61,15 +61,15 @@
       let result = randomNumber < 0.5 ? 'heads' : 'tails';
 
       // Show coin symbol
-      const coinSymbol = result === 'heads' ? '🙂' : '🦅';
+      const coinSymbol = result === 'heads' ? '👤' : '🪁';
       document.getElementById('coin').textContent = coinSymbol;
 
       // Display result
       if (guess === result) {
-        document.getElementById('result').textContent = `You guessed ${guess}! It's ${result}! 🎉 You win!`;
+        document.getElementById('result').textContent = `You guessed ${guess}! It's ${result}. You win! 🎉`;
         document.getElementById('result').style.color = 'green';
       } else {
-        document.getElementById('result').textContent = `You guessed ${guess}, but it's ${result}. 😢 You lose!`;
+        document.getElementById('result').textContent = `You guessed ${guess}, but it's ${result}. You lose! 😢`;
         document.getElementById('result').style.color = 'red';
       }
     }
