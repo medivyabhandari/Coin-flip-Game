@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Flip Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    #coin {
+      margin-top: 20px;
+      font-size: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🪙 Coin Flip Game</h1>
+  <p>Choose your guess:</p>
+
+  <button onclick="flipCoin('heads')">Heads</button>
+  <button onclick="flipCoin('tails')">Tails</button>
+
+  <div id="coin">❔</div>
+  <div id="result"></div>
+
+  <script>
+    function flipCoin(guess) {
+      const randomNumber = Math.random();
+      let result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+      // Show coin symbol
+      const coinSymbol = result === 'heads' ? '🙂' : '🦅';
+      document.getElementById('coin').textContent = coinSymbol;
+
+      // Display result
+      if (guess === result) {
+        document.getElementById('result').textContent = `You guessed ${guess}! It's ${result}! 🎉 You win!`;
+        document.getElementById('result').style.color = 'green';
+      } else {
+        document.getElementById('result').textContent = `You guessed ${guess}, but it's ${result}. 😢 You lose!`;
+        document.getElementById('result').style.color = 'red';
+      }
+    }
+  </script>
+
+</body>
+</html>
